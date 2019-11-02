@@ -1,0 +1,23 @@
+mutation  {
+ 	createOwner(owner: {name : "Andrea Tosato", address: "via centurare 25"}) {
+    id
+  }
+}
+
+
+
+query {
+  owners {
+    accounts {
+      id
+      description
+      type
+    }
+    address
+    id
+    name
+  }
+}
+
+
+

@@ -1,0 +1,22 @@
+query {
+  search (text: "a") {
+    ... on Human {
+      friends {
+        name
+      }
+    },
+    ... on Starship {
+      name
+    }
+  }
+}
+
+dotnet new --install "HotChocolate.Templates.StarWars"
+dotnet new starwars 
+
+
+query {
+  queryable(where: {name : "Han Solo"}) {
+    name
+  }
+}

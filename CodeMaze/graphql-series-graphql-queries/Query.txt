@@ -1,0 +1,7 @@
+{
+	owner(ownerId: "514c3bc3-14df-4515-bc13-256e75dd2e9f"){
+		accounts {
+			description, id, ownerId, type
+		}
+	}
+}

@@ -1,0 +1,22 @@
+mutation submitPost($newPost: SubmitPostInput!) {
+  submitPost(input: $newPost) {
+    id,
+    author {
+      name
+    },
+    publishedOn,
+    title
+  }
+}
+
+
+
+
+
+{
+  "newPost": {
+  	"authorId": 1,
+  	"title": "prova",
+    "markdown": "ciao"
+	}
+}
