@@ -20,3 +20,39 @@ query {
     name
   }
 }
+
+
+--- Directive
+query IncludeQuery($withFriends: Boolean!){
+  queryable(where: {name: "Han Solo"}) {
+    name,
+    friends @include(if: $withFriends){
+      name
+    }
+  }
+}
+
+{
+  "withFriends": true
+}
+
+
+--- ALIAS
+query IncludeQuery($withFriends: Boolean!){
+  Han: queryable(where: {name: "Han Solo"}) {
+    name,
+    friends @include(if: $withFriends){
+      name
+    }
+  },
+  Luke: queryable(where: {name: "Luke Skywalker"}) {
+    name,
+    friends @include(if: $withFriends){
+      name
+    }
+  },
+}
+
+{
+  "withFriends": true
+}
